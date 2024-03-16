@@ -25,6 +25,9 @@ for i in range(max_attempts):
          print("Ya has intentado con esa letra. Intenta con otra.")
          continue
      # Agregar la letra a la lista de letras adivinadas
+     if letter == "":
+         print("Error detectado: caracter no valido")
+         continue
      guessed_letters.append(letter)
      # Verificar si la letra está en la palabra secreta
      if letter in secret_word:
