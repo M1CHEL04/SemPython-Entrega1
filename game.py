@@ -47,3 +47,5 @@ for i in range(max_attempts):
 else:
      print(f"¡Oh no! Has agotado tus {max_attempts} intentos.")
      print(f"La palabra secreta era: {secret_word}")
+
+#fin
