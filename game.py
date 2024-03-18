@@ -15,7 +15,28 @@ guessed_letters = []
 print("¡Bienvenido al juego de adivinanzas!")
 print("Estoy pensando en una palabra. ¿Puedes adivinar cuál es?")
 
-word_displayed = "_" * len(secret_word)
+#seleccion de la dificultad
+difficulty=input("Ingrese la dificultad: \nFacil. \nMedia. \nDificil. \n").lower()
+
+if difficulty == 'facil':
+    #se muestran todas las vocales
+    cad= []
+    for aux in secret_word:
+        if(aux== "a")or(aux=="e")or(aux=="i")or(aux=="o")or(aux=="u"):
+            guessed_letters.append(aux)
+            cad.append(aux)
+        else:
+            cad.append("_")
+    word_displayed="".join(cad)
+elif difficulty == 'media':
+    #se muestran solo la primera y la ultima letra
+    word_displayed= (secret_word[0]+(len(secret_word)-2)*"_"+secret_word[len(secret_word)-1])
+    guessed_letters.append(secret_word[0])
+    guessed_letters.append(secret_word[len(secret_word)-1])
+else:
+    #no se muestra nada
+    word_displayed= "_" * len(secret_word)
+
 # Mostrarla palabra parcialmente adivinada
 print(f"Palabra: {word_displayed}")
 
@@ -40,7 +61,7 @@ while (current_failures != max_failures):
          print("Lo siento, la letra no está en la palabra.")
          current_failures+=1
      # Mostrar la palabra parcialmente adivinada
-     letters = []
+     letters=[]
      for letter in secret_word:
          if letter in guessed_letters:
              letters.append(letter)
