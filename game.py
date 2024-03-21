@@ -22,7 +22,7 @@ if difficulty == 'facil':
     #se muestran todas las vocales
     cad= []
     for aux in secret_word:
-        if(aux== "a")or(aux=="e")or(aux=="i")or(aux=="o")or(aux=="u"):
+        if(aux== "a")or(aux=="e")or(aux=="i")or(aux=="o")or(aux=="u")or(aux=="ó"):
             guessed_letters.append(aux)
             cad.append(aux)
         else:
@@ -76,4 +76,7 @@ while (current_failures != max_failures):
 else:
     print(f"¡Oh no! Has alcanzado los {max_failures} fallos.")
     print(f"La palabra secreta era: {secret_word}")
-#fin
+
+#Condiciones:
+    #El programa distingue letras con o sin acento, por lo tanto si la letra va con acento y lo pones sin, contara como error.
+    #En la modalidad "media" si se llega a dar el caso de que se repetie la primera o la ultima letra a lo largo de la palabra, se tomaran como letras adivinadas y las imprimira en el siguiente intento.
